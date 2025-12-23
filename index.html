@@ -5,33 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Utpal Chandra Mondol | Junior Web Developer</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <link rel="stylesheet" href="./styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-      body {
-        font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
-      }
-      .skill-bar {
-        transition: width 1.5s ease-in-out;
-      }
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: -38px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: #3b82f6;
-      }
-      .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-    </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
@@ -134,7 +111,7 @@
           <div class="md:w-1/2 flex justify-center">
             <div class="relative">
               <img
-                src="http://static.photos/technology/640x360/42"
+                src="./assets/IMG_3807.jpg"
                 alt="Profile"
                 class="rounded-lg w-full max-w-md shadow-xl"
               />
@@ -204,10 +181,14 @@
           <div class="md:w-1/2">
             <h3 class="text-xl font-semibold mb-4">Professional Summary</h3>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Junior web developer with experience in full-stack development
-              using Angular, React, Node.js, and PHP. Passionate about creating
-              efficient, scalable solutions and continuously learning new
-              technologies.
+              Junior Web Developer with a strong foundation in core web
+              technologies: JavaScript (ES6+), HTML5, and modern styling
+              techniques like Tailwind CSS. Actively focused on accelerating
+              proficiency in modern front-end frameworks, with dedicated
+              hands-on learning in Angular and React. I am simultaneously
+              exploring Node.js and PHP to understand full-stack architecture.
+              Seeking an entry-level role to leverage strong foundational skills
+              and contribute to scalable web development.
             </p>
             <p class="text-gray-600 leading-relaxed">
               Currently pursuing a Bachelor's in Computer Science with a minor
@@ -357,7 +338,7 @@
                 data-feather="file-text"
                 class="text-blue-600 w-8 h-8 mb-2"
               ></i>
-              <span class="text-sm">LaTeX</span>
+              <span class="text-sm">LaTeX(Overleaf)</span>
             </div>
             <div
               class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition"
@@ -653,7 +634,7 @@
                   Web Development & Full-stack Training
                 </h4>
               </div>
-              <p class="text-gray-600 text-sm">Self-Learning • 2023-2024</p>
+              <p class="text-gray-600 text-sm">Self-Learning • 2025</p>
             </div>
           </div>
         </div>
@@ -881,72 +862,12 @@
             </a>
           </div>
           <p class="text-gray-400 text-sm">
-            &copy; 2024 Utpal Chandra Mondol. All rights reserved.
+            &copy; 2025 Utpal Chandra Mondol. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
 
-    <script>
-      // Initialize feather icons
-      feather.replace();
-
-      // Mobile menu toggle
-      document
-        .getElementById("mobile-menu-button")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("hidden");
-
-          const icon = this.querySelector("i");
-          if (menu.classList.contains("hidden")) {
-            icon.setAttribute("data-feather", "menu");
-          } else {
-            icon.setAttribute("data-feather", "x");
-          }
-          feather.replace();
-        });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-
-          // Close mobile menu if open
-          if (
-            !document.getElementById("mobile-menu").classList.contains("hidden")
-          ) {
-            document.getElementById("mobile-menu").classList.add("hidden");
-            document
-              .getElementById("mobile-menu-button")
-              .querySelector("i")
-              .setAttribute("data-feather", "menu");
-            feather.replace();
-          }
-        });
-      });
-
-      // Animate skill bars when they come into view
-      const animateSkillBars = () => {
-        const skillBars = document.querySelectorAll(".skill-bar");
-        skillBars.forEach((bar) => {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // The width is already set inline, the transition will handle the animation
-                observer.unobserve(entry.target);
-              }
-            });
-          });
-          observer.observe(bar);
-        });
-      };
-
-      // Initialize animation on load
-      document.addEventListener("DOMContentLoaded", animateSkillBars);
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
